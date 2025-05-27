@@ -98,15 +98,15 @@ const HeroSection = () => {
 
      </div>
 
-    <div className='flex md:flex-row gap-10 justify-center items-center  flex-col-reverse  md:relative md:bottom-25 '>
+    <div className='flex md:flex-row gap-40 justify-center items-center  flex-col-reverse  md:relative md:bottom-25 '>
       <div className="w-full md:w-1/2 space-y-6 z-10">
-        <h1 className=" md:text-5xl text-2xl font-bold leading-snug pt-10 md:pt-0 relative bottom-20 md:bottom-0 text-center ">
+        <h1 className=" md:text-5xl text-2xl font-bold leading-snug pt-10 md:pt-0 relative bottom-40 md:bottom-0 text-center md:ml-20 ">
           Let’s Be Their Light – <br /> Together We Can Change Lives
         </h1>
-        <div className='tracking-widest urdu-glow h-10 gap-1 relative bottom-20 md:bottom-0 text-center'>
+        <div className='tracking-widest urdu-glow h-10 gap-1 relative bottom-40 md:bottom-0 text-center md:left-20'>
            {currentText}
         </div>
-         <div className="flex gap-4 mt-10 relative bottom-15 md:bottom-0 left-10">
+         <div className="flex gap-4 mt-10 relative bottom-35 md:bottom-0 left-10 md:left-20">
       <Button variant="primary" onClick={() => navigate('/donate')} className='cursor-pointer'>Donate Now</Button>
       <Button variant="secondary" onClick={() => navigate('/Missionpage')} className='cursor-pointer'>Our Mission</Button>
     </div>

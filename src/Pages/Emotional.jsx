@@ -1,7 +1,7 @@
 // EmotionalSection.jsx
 import { useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
-
+import girl from "../assets/girl.png"; // Replace with your image path
 const counters = [
   { icon: "💚", label: "Meals Served", end: 5000 },
   { icon: "🌳", label: "Trees Planted", end: 3200 },
@@ -52,7 +52,7 @@ const EmotionalSection = () => {
           "Ayesha was 7, hungry, and hopeless. Today she’s smiling because of you."
         </p>
         <img 
-          src="./src/assets/ChatGPT Image May 25, 2025, 04_18_46 PM.png" 
+          src={girl} 
           alt="Ayesha" 
           className="w-32 h-32 md:w-40 md:h-40 object-cover mx-auto rounded-full border-4 border-pink-400 shadow-xl" 
         />

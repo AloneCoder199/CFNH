@@ -7,6 +7,7 @@ import CertificateSection from "../Components/Certifate";
 import LocationSection from "../Components/Locatio";
 import Footer from "../Components/Footer";
 import BackButton from "../Components/BackButton";
+import emo from "../assets/emo.png"; // Import your emotional image
 const About = () => {
 
   return (
@@ -252,7 +253,7 @@ const About = () => {
   className="mt-24 max-w-5xl mx-auto text-center px-4"
 >
   <motion.img
-    src="./src/assets/emo-removebg-preview.png"
+    src={emo}
     alt="Impact"
     className=" rounded-3xl shadow-2xl hover:scale-105 transition-transform duration-700 border-4 border-transparent hover:border-pink-500 w-60  relative md:left-90 left-15"
     whileHover={{ rotate: 1 }}

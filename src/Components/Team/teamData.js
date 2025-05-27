@@ -1,4 +1,18 @@
 import UsmanGanichareman from '../../assets/UsmanGanichareman.jpg';
+import RanaMuhammadMushtaqkhanjointsectory from '../../assets/RanaMuhammadMushtaqkhanjointsectory.jpg';
+import Shabaz from '../../assets/Shabaz.jpg';
+import qasim from '../../assets/qasim.jpg';
+import mubashir from '../../assets/mubashir.png';
+import Naveedimran from '../../assets/Naveedimran.jpg';
+import ladremovebgpreview from '../../assets/ladremovebgpreview.png';
+import Abidalikhanv from '../../assets/volenter/Abidalikhanv.jpg';
+import Awaismanjv from '../../assets/volenter/Awaismanjv.jpg';
+import HafizShujasahbazv from '../../assets/volenter/HafizShujasahbazv.jpg';
+import Imranshaheenv from '../../assets/volenter/Imranshaheenv.jpg';
+import RanaSulamanMumtazv from '../../assets/volenter/RanaSulamanMumtazv.jpg';
+import RanaUsmanIslamv from '../../assets/volenter/RanaUsmanIslamv.jpg';
+
+
 
 export const teamMembers = [
   {
@@ -13,7 +27,7 @@ export const teamMembers = [
   {
     name: "Rana Muhammad Mushtaq khan",
     role: "Joint Sectory",
-    image: "./src/assets/Rana Muhammad Mushtaq khan  joint sectory.jpg",
+    image: RanaMuhammadMushtaqkhanjointsectory,
     // email: "0300-1234567",
     about: "Dedicated to fostering collaboration and driving success through strategic partnerships.",
     isOwner: false,
@@ -22,7 +36,7 @@ export const teamMembers = [
   {
     name: "Muhammad Shabaz",
     role: "Voice Chariman",
-    image: "./src/assets/Shabaz.jpg",
+    image: Shabaz,
     // email: "0300-1234567",
     about: "Dedicated to fostering collaboration and driving success through strategic partnerships.",
     isOwner: false,
@@ -31,7 +45,7 @@ export const teamMembers = [
   {
     name: "Muhammad Qasim",
     role: "Information Sectory",
-    image: "./src/assets/Muhammad Qasim  information sectory.jpg",
+    image: qasim,
     // email: "0300-1234567",
     about: "Ensuring smooth communication across the team and managing information flow with clarity and precision.",
     isOwner: false,
@@ -40,7 +54,7 @@ export const teamMembers = [
   {
     name: "Rana Mubashir Ali khan",
     role: "Office Sectory",
-    image: "./src/assets/Rana_Mubashir_Ali_khan__Office_sectrory-removebg-preview.png",
+    image: mubashir,
     // email: "0300-1234567",
     about: "Overseeing office operations and ensuring a productive work environment.",
     isOwner: false,
@@ -49,7 +63,7 @@ export const teamMembers = [
   {
     name: "Shumaila Sadaiq",
     role: "Finance Sectory",
-    image: "./src/assets/lad-removebg-preview.png",
+    image: ladremovebgpreview,
     // email: "0300-1234567",
     about: "Managing financial resources and ensuring fiscal responsibility.",
     isOwner: false,
@@ -58,7 +72,7 @@ export const teamMembers = [
   {
     name: "Rao Naveed Imran",
     role: "Joint Sectory",
-    image: "./src/assets/Rao Naveed imran joint sectory (1).jpg",
+    image: Naveedimran,
     // email: "0300-1234567",
     about: "Dedicated to fostering collaboration and driving success through strategic partnerships.",
     isOwner: false,
@@ -67,7 +81,7 @@ export const teamMembers = [
    {
     name: "Chudhary Usman Shabeer",
     role: "Genral Sectory",
-    image: "./src/assets/chudhary usman Shabeer  Genral sectory.png",
+    image: usmanShabeer,
     // email: "0300-1234567",
     about: "Ensuring smooth communication across the team and managing information flow with clarity and precision.",
     isOwner: false,
@@ -80,7 +94,7 @@ export const volunteers = [
   {
     name: "Abid ali khan",
     role: "Volunteer Designer",
-    image: "./src/assets/volenter/Abid ali khan v .jpg",
+    image: Abidalikhanv,
     // email: "0321-1234567",
     about: "Passionate volunteer dedicated to making a positive impact through creative design and teamwork.",
     type: "volunteer",
@@ -88,7 +102,7 @@ export const volunteers = [
   {
     name: "Awais Manj",
     role: "Volunteer Designer",
-    image: "./src/assets/volenter/Awais manj v .jpg",
+    image: Awaismanjv,
     // email: "0321-1234567",
     about: "Passionate volunteer dedicated to making a positive impact through creative design and teamwork.",
     type: "volunteer",
@@ -96,7 +110,7 @@ export const volunteers = [
   {
     name: "Hafiz Shuja sahbaz",
     role: "Volunteer Designer",
-    image: "./src/assets/volenter/Hafiz Shuja sahbaz v.jpg",
+    image: HafizShujasahbazv,
     // email: "0321-1234567",
     about: "Passionate volunteer dedicated to making a positive impact through creative design and teamwork.",
     type: "volunteer",
@@ -104,7 +118,7 @@ export const volunteers = [
   {
     name: "Imran Shaheen",
     role: "Volunteer Designer",
-    image: "./src/assets/volenter/Imran shaheen v .jpg",
+    image: Imranshaheenv,
     // email: "0321-1234567",
     about: "Passionate volunteer dedicated to making a positive impact through creative design and teamwork.",
     type: "volunteer",
@@ -112,7 +126,7 @@ export const volunteers = [
   {
     name: "Rana Sulaman Mumtaz",
     role: "Volunteer Designer",
-    image: "./src/assets/volenter/Rana Sulaman Mumtaz v.jpg",
+    image: RanaSulamanMumtazv,
     // email: "0333-1234567",
     about: "Committed to supporting the team with innovative design solutions and a collaborative spirit.",
     type: "volunteer",
@@ -120,7 +134,7 @@ export const volunteers = [
   {
     name: "Rana Usman Islam",
     role: "Volunteer Designer",
-    image: "./src/assets/volenter/Rana Usman  Islam v.jpg",
+    image: RanaUsmanIslamv,
     // email: "0321-1234567",
     about: "Passionate volunteer dedicated to making a positive impact through creative design and teamwork.",
     type: "volunteer",

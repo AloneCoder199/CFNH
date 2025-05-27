@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import Certifcate from "../assets/Certifcate.jpg"; // Replace with your certificate image path
 export default function CertificateSection() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -56,7 +56,7 @@ You can verify it yourself by viewing the certificate.
             >
               <h3 className="text-xl font-semibold mb-4 text-purple-700">📄 Official Government Certificate</h3>
               <img
-                src="./src/assets/Certifcate.jpg" // replace with your certificate path
+                src={Certifcate} // replace with your certificate path
                 alt="Company Certificate"
                 className="rounded-lg shadow-md w-full max-h-[400px] object-contain"
               />

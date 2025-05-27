@@ -23,7 +23,7 @@ const TeamMemberCard = ({ member, index }) => {
       <div className="card">
         {/* Front Side */}
         <div className="card-front">
-          <img src={member.image} alt={member.name} className="profile-img" />
+          <img src={member.image.src} alt={member.name.alt} className="profile-img" />
           <h2 className={`transition-opacity duration-700 ${showName ? "opacity-100" : "opacity-0"}`}>
             {member.name}
           </h2>

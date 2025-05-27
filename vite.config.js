@@ -13,4 +13,12 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'), // 👈 define @ as src
     },
   },
+  build:{
+     minify: 'esbuild', // or 'terser' for deeper compression
+  },
+  content: [
+  "./index.html",
+  "./src/**/*.{js,ts,jsx,tsx}",
+],
+
 });

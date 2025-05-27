@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import hero from '../assets/hero.png';
+import hero from '../assets/hero.webp';
 import { Button } from './src/components/ui/button';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
@@ -114,6 +114,7 @@ const HeroSection = () => {
       <div className="w-full md:w-1/2 relative flex justify-center z-10">
         <img
           src={hero}
+          loading="lazy"
           alt="Helping Image"
           className="max-w-md md:max-w-lg drop-shadow-2xl"
         />

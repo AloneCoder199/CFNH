@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Certifcate from "../assets/Certifcate.jpg"; // Replace with your certificate image path
+import Certifcate from "../assets/Certifcate.webp"; // Replace with your certificate image path
 export default function CertificateSection() {
   const [isOpen, setIsOpen] = useState(false);
 

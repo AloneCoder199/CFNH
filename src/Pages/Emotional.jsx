@@ -1,7 +1,7 @@
 // EmotionalSection.jsx
 import { useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
-import girl from "../assets/girl.png"; // Replace with your image path
+import girl from "../assets/girl.webp"; // Replace with your image path
 const counters = [
   { icon: "💚", label: "Meals Served", end: 5000 },
   { icon: "🌳", label: "Trees Planted", end: 3200 },
@@ -54,6 +54,7 @@ const EmotionalSection = () => {
         <img 
           src={girl} 
           alt="Ayesha" 
+          loading="lazy"
           className="w-32 h-32 md:w-40 md:h-40 object-cover mx-auto rounded-full border-4 border-pink-400 shadow-xl" 
         />
         <div className="flex flex-col md:flex-row justify-center items-center gap-6 mt-10">

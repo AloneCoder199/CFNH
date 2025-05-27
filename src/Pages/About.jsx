@@ -255,7 +255,7 @@ const About = () => {
   <motion.img
     src={emo}
     alt="Impact"
-    className=" rounded-3xl shadow-2xl hover:scale-105 transition-transform duration-700 border-4 border-transparent hover:border-pink-500 w-60  relative md:left-90 left-15"
+    className=" rounded-3xl shadow-2xl hover:scale-105 transition-transform duration-700 border-4 border-transparent hover:border-pink-500 w-60  relative md:left-90 left-14"
     whileHover={{ rotate: 1 }}
   />
 

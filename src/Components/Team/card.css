@@ -1,0 +1,177 @@
+/* card.css */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap');
+
+.urdu-glow {
+  font-family: 'Noto Nastaliq Urdu', serif;
+  text-shadow: 0 0 8px #21c87a, 0 0 15px #2e9aff, 0 0 25px #ff5050;
+}
+
+/* Container perspective for 3D effect */
+.card-container {
+  perspective: 1000px;
+}
+
+/* Card wrapper - will flip */
+.card {
+  position: relative;
+  width: 280px;
+  height: 380px;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease-in-out;
+  cursor: pointer;
+  border-radius: 15px;
+  box-shadow:
+    0 0 10px rgba(102, 126, 234, 0.6),
+    0 0 20px rgba(102, 126, 234, 0.6),
+    0 0 30px rgba(102, 126, 234, 0.7);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Flip the card on hover */
+.card-container:hover .card {
+  transform: rotateY(180deg);
+  box-shadow:
+    0 0 20px rgba(255, 255, 255, 0.9),
+    0 0 40px rgba(255, 255, 255, 0.9),
+    0 0 60px rgba(102, 126, 234, 1);
+}
+
+/* Front and back side styles */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+  box-sizing: border-box;
+  color: black;
+  text-align: center;
+}
+
+/* Front side */
+.card-front {
+  background: linear-gradient(to bottom right, #3b82f6, #000000, #93c5fd);
+  color: #e0e7ff; 
+  box-shadow:
+    inset 0 0 10px rgba(255, 255, 255, 0.1);
+  z-index: 2;
+}
+
+/* Profile Image Styling */
+.profile-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow:
+    0 0 15px rgba(255, 255, 255, 0.6);
+  object-fit: cover;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.card-container:hover .profile-img {
+  transform: scale(1.1);
+}
+
+/* Name styling */
+.card-front h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
+}
+
+/* Role styling */
+.role-text {
+  font-size: 1rem;
+  color: #d1d5db; /* Tailwind gray-300 */
+  letter-spacing: 0.05em;
+}
+
+/* Back side */
+.card-back {
+   background: linear-gradient(to bottom right, #2d79f5, #c9c7c7, #93c5fd);
+  color: #000000; 
+  transform: rotateY(180deg);
+  box-shadow:
+    inset 0 0 10px rgba(0, 0, 0, 0.3);
+  justify-content: center;
+  padding: 30px 20px;
+}
+
+/* Email styling */
+.email-text {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #c4b5fd; /* light purple */
+  margin-bottom: 15px;
+  text-shadow: 0 0 6px rgba(196, 181, 253, 0.7);
+}
+
+/* About text styling */
+.about-text {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #000000; /* lighter purple */
+}
+
+/* Glowing animation on card hover */
+.card-container:hover .card-front h2,
+.card-container:hover .card-front p,
+.card-container:hover .card-back p {
+  text-shadow:
+    0 0 8px #ffffff,
+    0 0 15px #7f5af0,
+    0 0 20px #7f5af0;
+  transition: text-shadow 0.3s ease;
+}
+
+
+/* glowing effects  */
+
+
+.glowing-text {
+  color: #161616;
+  text-shadow: 0 0 10px #E85C50, 0 0 20px #f96e62, 0 0 30px #f7a69f;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #E85C50, 0 0 10px #f84b3b, 0 0 15px #bf4338;
+  }
+  to {
+    text-shadow: 0 0 20px #ec4899, 0 0 30px #ec4899, 0 0 40px #ec4899;
+  }
+}
+
+
+/* Add this in your global CSS file if you have one like index.css */
+.urdu-styling {
+  font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', serif;
+  letter-spacing: 5px;
+  line-height: 1;
+}
+
+
+
+@keyframes fadeGlow {
+  0%, 100% {
+    opacity: 0.2;
+    text-shadow: 0 0 10px #d8ff89, 0 0 20px  #E85C50;
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 20px #8bff81, 0 0 40px #c2ffda;
+  }
+}
+
+.fade-glow {
+  animation: fadeGlow 2s ease-in-out infinite;
+}

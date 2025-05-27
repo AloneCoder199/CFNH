@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+/* Add in global CSS or tailwind.config.css */
+@layer utilities {
+  .drop-shadow-glow {
+    filter: drop-shadow(0 0 6px rgba(255, 0, 120, 0.5));
+  }
+}
+
+@layer utilities {
+  .drop-shadow-glow {
+    filter: drop-shadow(0 0 6px rgba(0, 200, 150, 0.5));
+  }
+}
+
+
+@layer utilities {
+  .drop-shadow-glow {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+  }
+}
+
+@layer utilities {
+  .drop-shadow-glow {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+  }
+}

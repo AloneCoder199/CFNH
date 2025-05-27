@@ -11,7 +11,7 @@ import HafizShujasahbazv from '../../assets/volenter/HafizShujasahbazv.jpg';
 import Imranshaheenv from '../../assets/volenter/Imranshaheenv.jpg';
 import RanaSulamanMumtazv from '../../assets/volenter/RanaSulamanMumtazv.jpg';
 import RanaUsmanIslamv from '../../assets/volenter/RanaUsmanIslamv.jpg';
-
+import usmanShabeer from '../../assets/usmanShabeer.png';
 
 
 export const teamMembers = [

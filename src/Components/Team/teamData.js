@@ -1,4 +1,4 @@
-import UsmanGanichareman from '../assets/UsmanGanichareman.png';
+import UsmanGanichareman from './assets/UsmanGanichareman.jpg';
 
 export const teamMembers = [
   {

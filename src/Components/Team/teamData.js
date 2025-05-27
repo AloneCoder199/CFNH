@@ -1,8 +1,10 @@
+import UsmanGanichareman from '../assets/UsmanGanichareman.png';
+
 export const teamMembers = [
   {
     name: "Usman Gani",
     role: "Founder & CEO",
-    image: "./src/assets/Usman Gani chareman.jpg",
+    image: UsmanGanichareman,
     // email: "PH : 0321-1234567",
     about: "Founder & visionary leader, turning bold ideas into impactful realities with innovation and strategy.",
     isOwner: true,

@@ -78,7 +78,7 @@ const HeroSection = () => {
   return (
     
     <>
-    <section className="relative flex flex-col-reverse md:flex-row items-center justify-between px-6 md:px-20 py-16 bg-gradient-to-br from-blue-500 via-white to-blue-300   overflow-hidden mb-10">
+    <section className="relative flex flex-col-reverse md:flex-row items-center justify-between px-6 md:px-20 py-16 bg-gradient-to-br from-blue-500 via-white to-blue-300   overflow-hidden mb-10 md:pl-0 pl-8 pr-8 md:pr-0">
       {/* BACKGROUND TEXT */}
 <div className="inset-0 flex flex-col ">
      <div className='releative top-0 left-0 w-full h-full'>

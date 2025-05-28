@@ -9,6 +9,8 @@ import Team from "./Pages/Team";
 import Mission from "./Pages/Missionpage";
 import './App.css';
 import ProjectsPage from "./Pages/Projects";
+import Success from "./Components/Success";
+import Cancel from "./Components/Cancel";
 function App() {
   return (
     <Router>
@@ -20,6 +22,8 @@ function App() {
         <Route path="/team" element={<Team />} />
        <Route path="/Missionpage" element={<Mission/>} />
        <Route path="/Projects" element={<ProjectsPage/>} />
+       <Route path="/success" element={<Success />} />
+        <Route path="/cancel" element={<Cancel />} />
 
       </Routes>
     </Router>

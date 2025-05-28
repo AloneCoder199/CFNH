@@ -1,9 +1,14 @@
+// src/DonatePage.jsx
 import React, { useState } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import Swal from 'sweetalert2';
 import { motion } from 'framer-motion';
+import Footer from '../Components/Footer';
+import Navbar from '../Components/Navbar';
+import BackButton from '../Components/BackButton';
 
-const stripePromise = loadStripe("pk_test_XXXXXXXXXXXXXXXXXXXXXXXX");
+// Stripe publishable key
+const stripePromise = loadStripe("pk_test_51RSztDRw56Pz7bT5c3hJiwSUs9BH19ajOuUl6JhOiPgR7aaxSi2qF7gFrxns2jnStZwDwCTgUYMRl0pHswUvX6Pv005gqDp4lW");
 
 const DonatePage = () => {
   const [amount, setAmount] = useState('');
@@ -27,6 +32,7 @@ const DonatePage = () => {
     try {
       const stripe = await stripePromise;
 
+      // Update your backend URL here (local or deployed)
       const response = await fetch("http://localhost:5000/create-checkout-session", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -62,7 +68,10 @@ const DonatePage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#1f1c2c] via-[#302b63] to-[#24243e] flex items-center justify-center p-6">
+    <>
+    <Navbar/>
+    <BackButton/>
+    <div className="min-h-screen bg-gradient-to-br from-blue-500 via-black to-blue-300   flex items-center justify-center p-6">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -79,7 +88,7 @@ const DonatePage = () => {
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
           placeholder="Enter amount in USD"
-          className="w-full px-4 py-3 text-lg text-black rounded-xl mb-6 outline-none focus:ring-2 focus:ring-purple-500"
+          className="w-full px-4 py-3 text-lg text-white rounded-xl mb-6 outline-none focus:ring-2 focus:ring-purple-500"
         />
 
         <motion.button
@@ -99,6 +108,8 @@ const DonatePage = () => {
         </p>
       </motion.div>
     </div>
+    <Footer/>
+    </>
   );
 };
 

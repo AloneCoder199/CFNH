@@ -4,7 +4,6 @@ import "aos/dist/aos.css";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import BackButton from "../Components/BackButton";
-
 const missionPoints = [
   { icon: "❤️", title: "Compassion", description: "Spreading kindness and care to those who need it most." },
   { icon: "🌿", title: "Nature", description: "Protecting and preserving our natural world." },
@@ -14,7 +13,7 @@ const missionPoints = [
   { icon: "🤝", title: "Humanity", description: "Standing up for every human life with dignity and love." },
   { icon: "📚", title: "Free Education", description: "Making education accessible to every child, everywhere." },
   { icon: "🥣", title: "Poverty Relief", description: "Helping families escape the cycle of poverty." },
-  { icon: "⚖️", title: "Gender Equality", description: "Ensuring equal rights and opportunities for all genders." },
+  { icon: "👩‍⚖️",title: "Gender Equality", description: "Ensuring equal rights and opportunities for all genders." },
   { icon: "👩‍🔧", title: "Women Empowerment", description: "Empowering women to lead, learn, and rise." },
   { icon: "🍱", title: "Food Delivery", description: "Providing meals to hungry families in need." },
   { icon: "🎁", title: "Be a Donor", description: "Join us in making a real difference in someone's life." },
@@ -45,7 +44,7 @@ const Mission = () => {
               data-aos="zoom-in"
               data-aos-delay={index * 100}
             >
-              <div className="text-5xl mb-4">{point.icon}</div>
+              <div className="text-5xl mb-4 ">{point.icon}</div>
               <h3 className="text-2xl font-bold mb-2 text-white">{point.title}</h3>
               <p className="text-white">{point.description}</p>
             </div>

@@ -12,7 +12,6 @@ const Footer = () => {
           <ul className="space-y-2 text-sm">
             <li><a href="/about" className="hover:underline">About Us</a></li>
             <li><a href="/projects" className="hover:underline">Projects</a></li>
-            <li><a href="/volunteer" className="hover:underline">Volunteer</a></li>
             <li><a href="/donate" className="hover:underline">Donate</a></li>
             <li><a href="/contact" className="hover:underline">Contact</a></li>
           </ul>
@@ -23,17 +22,17 @@ const Footer = () => {
           <h3 className="text-lg font-semibold mb-4 text-blue-400">Follow Us</h3>
           <div className="flex space-x-4 text-xl">
             <a href="https://www.facebook.com/profile.php?id=61576335973237" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
-            <a href="https://instagram.com/clientProfile" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+            {/* <a href="https://instagram.com/clientProfile" target="_blank" rel="noopener noreferrer"><FaInstagram /></a> */}
             <a href="https://www.youtube.com/@CompassionfornatureandHumanity" target="_blank" rel="noopener noreferrer"><FaYoutube /></a>
-            <a href="https://linkedin.com/in/clientProfile" target="_blank" rel="noopener noreferrer"><FaWhatsapp/></a>
-            <a href="https://github.com/clientProfile" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
+            <a href="https://linkedin.com/in/clientProfile" target="_blank" rel="noopener noreferrer"><FaLinkedin/></a>
+            {/* <a href="https://github.com/clientProfile" target="_blank" rel="noopener noreferrer"><FaGithub /></a> */}
           </div>
         </div>
 
         {/* Contact Info */}
         <div>
           <h3 className="text-lg font-semibold mb-4 text-blue-400">Contact Info</h3>
-          <p className="text-sm">Email: client@example.com</p>
+          <p className="text-sm">Email: compassionfornatureandhumanity@gmail.com</p>
           <p className="text-sm">Phone: +92 3338375445</p>
           <p className="text-sm">Phone: +92 3458636638</p>
           <p className="text-sm">Location: Samundri - FSD - Pakistan</p>

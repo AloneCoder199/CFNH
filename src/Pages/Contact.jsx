@@ -23,7 +23,7 @@ const Contact = () => {
   const handleWhatsAppSend = (e) => {
     e.preventDefault();
     const { name, email, message } = formData;
-    const phoneNumber = "923046880151"; // ✅ Your WhatsApp number (without +)
+    const phoneNumber = "923338375445"; // ✅ Your WhatsApp number (without +)
     const text = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
     const encodedText = encodeURIComponent(text);
     const url = `https://wa.me/${phoneNumber}?text=${encodedText}`;

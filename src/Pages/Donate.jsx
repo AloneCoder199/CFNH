@@ -1,44 +1,105 @@
-// src/Pages/Donate.jsx
-import React from "react";
-import Navbar from "../Components/Navbar";
-import BackButton from "../Components/BackButton";
+import React, { useState } from 'react';
+import { loadStripe } from '@stripe/stripe-js';
+import Swal from 'sweetalert2';
+import { motion } from 'framer-motion';
 
-const Donate = () => {
+const stripePromise = loadStripe("pk_test_XXXXXXXXXXXXXXXXXXXXXXXX");
+
+const DonatePage = () => {
+  const [amount, setAmount] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const handleDonate = async () => {
+    if (!amount || isNaN(amount) || Number(amount) <= 0) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Invalid Amount',
+        text: 'Please enter a valid donation amount (USD)',
+        confirmButtonColor: '#8b5cf6',
+        background: '#1f1c2c',
+        color: '#fff',
+      });
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const stripe = await stripePromise;
+
+      const response = await fetch("http://localhost:5000/create-checkout-session", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ amount: Number(amount) * 100 }),
+      });
+
+      const session = await response.json();
+
+      const result = await stripe.redirectToCheckout({ sessionId: session.id });
+
+      if (result.error) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Payment Failed',
+          text: result.error.message,
+          confirmButtonColor: '#ef4444',
+          background: '#1f1c2c',
+          color: '#fff',
+        });
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Server Error',
+        text: 'Something went wrong while processing the payment.',
+        confirmButtonColor: '#ef4444',
+        background: '#1f1c2c',
+        color: '#fff',
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <>
-    <Navbar/> 
-    <BackButton/>
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-red-400 to-pink-600 text-white p-8">
-      <h1 className="text-5xl font-bold mb-6 drop-shadow-lg">Donate</h1>
-      {/* <p className="max-w-xl text-center text-lg">
-        Support our cause by making a donation. Every contribution counts!
-        
-      </p> */}
-       <section className="bg-gradient-to-br from-blue-500 via-black to-blue-300 text-black py-12 px-6 text-center rounded-2xl shadow-2xl animate-pulse border-4 border-purple-500 max-w-2xl mx-auto my-10">
-      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
-        🚧 Donate Page Under Construction
-      </h2>
-<p className="text-lg md:text-xl font-medium text-gray-300 mb-6">
-  This page is currently being developed by the <span className="text-purple-400 font-semibold">Alone Coder</span> company.
-  The company was founded by <span className="text-green-400">Muhammad Bilal</span>,
-  based in <span className="text-yellow-400">Samundri, Faisalabad</span>.
-  <br />
-  If you need a custom project, feel free to get in touch with us.
-</p>
-
-
-      <a
-        href="https://wa.me/923219515138?text=hello%20sir%20i%20need%20a%20project"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-block px-6 py-3 bg-green-500 text-white font-bold text-lg rounded-full shadow-lg hover:bg-green-600 transition duration-300 glow-btn"
+    <div className="min-h-screen bg-gradient-to-br from-[#1f1c2c] via-[#302b63] to-[#24243e] flex items-center justify-center p-6">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="bg-white/10 backdrop-blur-md text-white p-8 rounded-3xl shadow-2xl w-full max-w-md"
       >
-        💬 Contact on WhatsApp
-      </a>
-    </section>
+        <h2 className="text-3xl font-bold text-purple-400 mb-2 text-center">Support Us ❤️</h2>
+        <p className="text-sm text-gray-200 mb-6 text-center">
+          Your donation helps us continue our mission. Every dollar counts!
+        </p>
+
+        <input
+          type="number"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+          placeholder="Enter amount in USD"
+          className="w-full px-4 py-3 text-lg text-black rounded-xl mb-6 outline-none focus:ring-2 focus:ring-purple-500"
+        />
+
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={handleDonate}
+          disabled={loading}
+          className={`w-full py-3 text-lg font-semibold rounded-xl shadow-lg transition duration-200 ${
+            loading ? 'bg-gray-500 cursor-not-allowed' : 'bg-purple-600 hover:bg-purple-700'
+          }`}
+        >
+          {loading ? "Processing..." : "Donate Now"}
+        </motion.button>
+
+        <p className="mt-4 text-xs text-center text-gray-300">
+          100% Secure Payment via Stripe
+        </p>
+      </motion.div>
     </div>
-    </>
   );
 };
 
-export default Donate;
+export default DonatePage;

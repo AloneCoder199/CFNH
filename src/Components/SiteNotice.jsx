@@ -8,7 +8,8 @@ const SiteNotice = () => {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, ease: 'easeOut' }}
-      className="w-full bg-yellow-50 border-b-2 border-yellow-300 px-4 py-4 sm:px-6 flex flex-col sm:flex-row justify-between items-center text-yellow-900 text-sm sm:text-base font-medium z-50 shadow-md"
+      className="w-full bg-yellow-50 border-b-2 border-yellow-300 px-4 py-4 sm:px-6 flex flex-col sm:flex-row justify-between items-center text-yellow-900 text-sm sm:text-base font-medium z-50 shadow-md fixed top-0 left-0 right-0 sm:gap-4 sm:py-3 sm:rounded-b-lg sm:shadow-lg sm:bg-yellow-100"
+      style={{ backdropFilter: 'blur(10px)' }}
     >
       <div className="flex items-start sm:items-center gap-3 text-center sm:text-left flex-col sm:flex-row">
         <motion.div

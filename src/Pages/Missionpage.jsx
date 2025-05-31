@@ -13,7 +13,7 @@ const missionPoints = [
   { icon: "🤝", title: "Humanity", description: "Standing up for every human life with dignity and love." },
   { icon: "📚", title: "Free Education", description: "Making education accessible to every child, everywhere." },
   { icon: "🥣", title: "Poverty Relief", description: "Helping families escape the cycle of poverty." },
-  { icon: "👩‍⚖️",title: "Gender Equality", description: "Ensuring equal rights and opportunities for all genders." },
+  { icon: "🧑‍🤝‍🧑 = 👨‍👩‍👧‍👦",title: "Gender Equality", description: "Ensuring equal rights and opportunities for all genders." },
   { icon: "👩‍🔧", title: "Women Empowerment", description: "Empowering women to lead, learn, and rise." },
   { icon: "🍱", title: "Food Delivery", description: "Providing meals to hungry families in need." },
   { icon: "🎁", title: "Be a Donor", description: "Join us in making a real difference in someone's life." },

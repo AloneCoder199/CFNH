@@ -11,9 +11,11 @@ import './App.css';
 import ProjectsPage from "./Pages/Projects";
 import Success from "./Components/Success";
 import Cancel from "./Components/Cancel";
+import SiteNotice from "./Components/SiteNotice";
 function App() {
   return (
     <Router>
+      <SiteNotice/>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<About />} />
@@ -26,6 +28,7 @@ function App() {
         <Route path="/cancel" element={<Cancel />} />
 
       </Routes>
+       <SiteNotice/>
     </Router>
   );
 }

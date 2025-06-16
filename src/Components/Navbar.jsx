@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import logo from '../assets/logo.webp';
 import { motion, AnimatePresence } from "framer-motion";
 import {
   FaLeaf,
@@ -35,14 +36,13 @@ function Navbar() {
     <header className="w-full sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-md">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
-         <img 
-      src="./src/assets/logo.webp" 
+          <img 
+      src={logo} 
       alt="Logo" 
       className="w-8 h-8 object-contain animate-pulse" 
     />
           <span className="text-xl font-bold text-blue-900 select-none animate-fade-in">Compassion ہمــــــدردی</span>
         </div>
-
         <nav className="hidden md:flex gap-8 font-semibold text-gray-700">
           {navItems.map(({ name, to, icon }) => (
             <NavLink

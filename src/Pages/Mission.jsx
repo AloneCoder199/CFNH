@@ -1,6 +1,7 @@
 // MissionSection.jsx
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+
 const topics = [
   { title: "Compassion", icon: "❤️", description: "Compassion drives our mission to help others without expecting anything in return." },
   { title: "Nature", icon: "🌿", description: "Protecting and preserving nature for a sustainable future." },
@@ -19,29 +20,47 @@ const topics = [
 
 const MissionSection = () => {
   const containerRef = useRef(null);
-  const intervalRef = useRef(null);
+  const animationFrameRef = useRef(null);
+  const lastTimeRef = useRef(null);
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   useEffect(() => {
     const container = containerRef.current;
-    let scrollAmount = 0;
+    let scrollSpeed = 0.3; // pixels per ms
+    let isPaused = false;
 
-    const autoScroll = () => {
-      if (hoveredIndex !== null) return;
-      if (!container) return;
-      scrollAmount += 1;
-      if (scrollAmount >= container.scrollWidth - container.clientWidth) {
-        scrollAmount = 0;
+    const step = (timestamp) => {
+      if (!lastTimeRef.current) lastTimeRef.current = timestamp;
+      const delta = timestamp - lastTimeRef.current;
+      lastTimeRef.current = timestamp;
+
+      if (!isPaused && container && hoveredIndex === null) {
+        container.scrollLeft += delta * scrollSpeed;
+
+        if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
+          container.scrollLeft = 0; // loop back
+        }
       }
-      container.scrollTo({
-        left: scrollAmount,
-        behavior: "smooth",
-      });
+
+      animationFrameRef.current = requestAnimationFrame(step);
     };
 
-    intervalRef.current = setInterval(autoScroll, 40);
+    animationFrameRef.current = requestAnimationFrame(step);
 
-    return () => clearInterval(intervalRef.current);
+    const handleUserScroll = () => {
+      isPaused = true;
+      clearTimeout(animationFrameRef.current);
+      setTimeout(() => {
+        isPaused = false;
+      }, 1500); // pause for 1.5s after manual scroll
+    };
+
+    container.addEventListener("scroll", handleUserScroll);
+
+    return () => {
+      cancelAnimationFrame(animationFrameRef.current);
+      container.removeEventListener("scroll", handleUserScroll);
+    };
   }, [hoveredIndex]);
 
   return (
@@ -65,7 +84,7 @@ const MissionSection = () => {
 
       <div
         ref={containerRef}
-        className="flex gap-6 overflow-x-scroll no-scrollbar py-6 transition-all scroll-smooth"
+        className="flex gap-6 overflow-x-scroll no-scrollbar py-6 scroll-smooth"
       >
         {topics.map((item, i) => (
           <motion.div
@@ -77,20 +96,29 @@ const MissionSection = () => {
             onMouseLeave={() => setHoveredIndex(null)}
             className="relative flex-shrink-0 w-64 h-64 cursor-pointer perspective"
           >
-            <div className="group w-full h-full [transform-style:preserve-3d] transition-transform duration-700 relative"
-              style={{ transform: hoveredIndex === i ? 'rotateY(180deg)' : 'rotateY(0deg)' }}
+            <div
+              className="group w-full h-full [transform-style:preserve-3d] transition-transform duration-700 relative"
+              style={{
+                transform: hoveredIndex === i ? "rotateY(180deg)" : "rotateY(0deg)",
+              }}
             >
               {/* Front Side */}
-              <div className="absolute w-full h-full flex flex-col items-center justify-center rounded-2xl p-6 text-black shadow-xl backface-hidden"
-                 style={{ background: "linear-gradient(to right, #bfdbfe, #60a5fa)" }}
+              <div
+                className="absolute w-full h-full flex flex-col items-center justify-center rounded-2xl p-6 text-black shadow-xl backface-hidden"
+                style={{
+                  background: "linear-gradient(to right, #bfdbfe, #60a5fa)",
+                }}
               >
                 <div className="text-5xl mb-3 drop-shadow-md">{item.icon}</div>
                 <h3 className="text-xl font-semibold drop-shadow">{item.title}</h3>
               </div>
 
               {/* Back Side */}
-              <div className="absolute w-full h-full flex items-center justify-center p-4 text-sm text-center rotate-y-180 backface-hidden rounded-2xl text-black shadow-xl"
-                 style={{ background: "linear-gradient(to bottom, #bfdbfe, #60a5fa)" }}
+              <div
+                className="absolute w-full h-full flex items-center justify-center p-4 text-sm text-center rotate-y-180 backface-hidden rounded-2xl text-black shadow-xl"
+                style={{
+                  background: "linear-gradient(to bottom, #bfdbfe, #60a5fa)",
+                }}
               >
                 <p>{item.description}</p>
               </div>
@@ -103,3 +131,16 @@ const MissionSection = () => {
 };
 
 export default MissionSection;
+
+
+
+
+
+
+
+
+
+
+
+
+

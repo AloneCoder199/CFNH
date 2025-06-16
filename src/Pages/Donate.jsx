@@ -9,11 +9,9 @@ import BackButton from '../Components/BackButton';
 
 // Stripe publishable key
 const stripePromise = loadStripe("pk_test_51RSztDRw56Pz7bT5c3hJiwSUs9BH19ajOuUl6JhOiPgR7aaxSi2qF7gFrxns2jnStZwDwCTgUYMRl0pHswUvX6Pv005gqDp4lW");
-
 const DonatePage = () => {
   const [amount, setAmount] = useState('');
   const [loading, setLoading] = useState(false);
-
   const handleDonate = async () => {
     if (!amount || isNaN(amount) || Number(amount) <= 0) {
       Swal.fire({
@@ -36,7 +34,7 @@ const DonatePage = () => {
       const response = await fetch("http://localhost:5000/create-checkout-session", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ amount: Number(amount) * 100 }),
+        body: JSON.stringify({ amount: Number(amount) * 1 }),
       });
 
       const session = await response.json();

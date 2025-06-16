@@ -12,8 +12,7 @@ import Imranshaheenv from '../../assets/volenter/Imranshaheenv.webp';
 import RanaSulamanMumtazv from '../../assets/volenter/RanaSulamanMumtazv.webp';
 import RanaUsmanIslamv from '../../assets/volenter/RanaUsmanIslamv.webp';
 import usmanShabeer from '../../assets/usmanShabeer.webp';
-
-
+import RevshakeelNadeem from '../../assets/RevshakeelNadeem.webp';
 export const teamMembers = [
   {
     name: "Usman Gani",
@@ -112,6 +111,20 @@ export const teamMembers = [
     image:{
       src: usmanShabeer,
       alt: "Chudhary Usman Shabeer",
+      loading:"lazy"
+    },
+    // email: "0300-1234567",
+    about: "Ensuring smooth communication across the team and managing information flow with clarity and precision.",
+    isOwner: false,
+    type: "team",
+  }
+  ,
+  {
+    name: "Rev shakeel Nadeem",
+    role: " Project manager",
+    image:{
+      src: RevshakeelNadeem,
+      alt: "Rev shakeel Nadeem",
       loading:"lazy"
     },
     // email: "0300-1234567",

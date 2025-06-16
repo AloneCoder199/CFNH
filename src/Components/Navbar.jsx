@@ -35,7 +35,11 @@ function Navbar() {
     <header className="w-full sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-md">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <FaLeaf className="text-green-600 text-2xl animate-pulse" />
+         <img 
+      src="./src/assets/logo.webp" 
+      alt="Logo" 
+      className="w-8 h-8 object-contain animate-pulse" 
+    />
           <span className="text-xl font-bold text-blue-900 select-none animate-fade-in">Compassion ہمــــــدردی</span>
         </div>
 

@@ -15,7 +15,7 @@ import SiteNotice from "./Components/SiteNotice";
 function App() {
   return (
     <Router>
-      <SiteNotice/>
+      {/* <SiteNotice/> */}
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<About />} />
@@ -28,7 +28,7 @@ function App() {
         <Route path="/cancel" element={<Cancel />} />
 
       </Routes>
-       <SiteNotice/>
+       {/* <SiteNotice/> */}
     </Router>
   );
 }

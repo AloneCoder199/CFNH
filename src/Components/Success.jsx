@@ -2,11 +2,12 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import BackButton from './BackButton';
 
 const Success = () => (
     <>
     <Navbar />
-    <BackButton />
+    <BackButton/>
     <div className="min-h-screen flex flex-col justify-center items-center bg-green-700 text-white p-6">
     <h1 className="text-4xl font-bold mb-4">Thank You for Your Donation! 🎉</h1>
     <p className="text-lg">Your payment was successful.</p>

@@ -8,7 +8,7 @@ import Navbar from '../Components/Navbar';
 import BackButton from '../Components/BackButton';
 
 // Stripe publishable key
-const stripePromise = loadStripe("pk_test_51RSztDRw56Pz7bT5c3hJiwSUs9BH19ajOuUl6JhOiPgR7aaxSi2qF7gFrxns2jnStZwDwCTgUYMRl0pHswUvX6Pv005gqDp4lW");
+const stripePromise = loadStripe("pk_live_51S78xlJLpDsv4rIZQDcLk6QWE5DB0oXgss1idQEl8U5OEkWiGF3qDc8YWjhrLEJI5LF7lQXtwiF8cZ39nlaYm41000ezbsCXd1");
 const DonatePage = () => {
   const [amount, setAmount] = useState('');
   const [loading, setLoading] = useState(false);

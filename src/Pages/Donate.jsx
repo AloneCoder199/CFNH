@@ -33,7 +33,7 @@ const DonatePage = () => {
       // Update your backend URL here (local or deployed)
       // fetch("https://cfnh.online:5000/create-checkout-session")
 
-      const response = await fetch("https://cfnh.online:5000/create-checkout-session", {
+      const response = await fetch("/api/create-checkout-session", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ amount: Number(amount) * 1 }),

@@ -31,7 +31,9 @@ const DonatePage = () => {
       const stripe = await stripePromise;
 
       // Update your backend URL here (local or deployed)
-      const response = await fetch("http://localhost:5000/create-checkout-session", {
+      // fetch("https://cfnh.online:5000/create-checkout-session")
+
+      const response = await fetch("https://cfnh.online:5000/create-checkout-session", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ amount: Number(amount) * 1 }),
